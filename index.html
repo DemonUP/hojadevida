@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida - Santiago Arenas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="contenedor-cv">
+        <!-- Columna Izquierda -->
+        <div class="columna-izquierda">
+            <div class="perfil">
+                <img src="yoengolem.png" alt="Foto de perfil" class="imagen-perfil">
+                <h1>Santiago Arenas</h1>
+                <h3>Desarrollador Backend</h3>
+            </div>
+            
+            <div class="informacion-contacto">
+                <h2><i class="fas fa-address-card"></i> Contacto</h2>
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Nontrake1@gmail.com</p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+57 316 8896 309</p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-github"></i>
+                    <p>github.com/DemonUP</p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Cali, Colombia</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="columna-derecha">
+            <section class="seccion-cv">
+                <h2><i class="fas fa-user-secret"></i> Sobre Mí</h2>
+                <p class="descripcion">Estudiante de 5to semestre de Ingeniería de Sistemas en la Universidad Santiago de Cali con experiencia como desarrollador backend. Especializado en crear soluciones seguras y escalables, combinando desarrollo de software con prácticas de ciberseguridad.</p>
+            </section>
+
+            <section class="seccion-cv">
+                <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+                <div class="educacion-container">
+                    <div class="educacion-item">
+                        <button class="btn-remove" onclick="eliminarEducacion(this)"><i class="fas fa-times"></i></button>
+                        <div class="educacion-header">
+                            <h3>Ingeniería de Sistemas</h3>
+                            <span class="fecha">2022 - Actualidad</span>
+                        </div>
+                        <p class="institucion">Universidad Santiago de Cali</p>
+                        <ul class="detalles">
+                            <li>5to Semestre</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="agregarEducacion()">Agregar Educación</button>
+            </section>
+            
+            <section class="seccion-cv">
+                <h2><i class="fas fa-laptop-code"></i> Habilidades</h2>
+                <div class="habilidades-container">
+                    <div class="habilidades-columna">
+                        <div class="habilidades-header">
+                            <h3 class="habilidades-titulo"><i class="fas fa-code"></i> Desarrollo</h3>
+                            <button class="btn-add" onclick="agregarHabilidad('desarrollo')"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="habilidades-lista">
+                            <span>Node.js<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>PHP/Laravel<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>Python<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>Docker<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>Git<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>Linux<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                        </div>
+                    </div>
+                    <div class="habilidades-columna">
+                        <div class="habilidades-header">
+                            <h3 class="habilidades-titulo"><i class="fas fa-shield-alt"></i> Seguridad</h3>
+                            <button class="btn-add" onclick="agregarHabilidad('seguridad')"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="habilidades-lista">
+                            <span>Pentesting<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>Análisis de Vulnerabilidades<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                            <span>Auditorías<button class="btn-remove" onclick="eliminarHabilidad(this)">−</button></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="seccion-cv">
+                <h2><i class="fas fa-briefcase"></i> Experiencia</h2>
+                <div class="experiencia-container">
+                    <div class="experiencia-item">
+                        <button class="btn-remove" onclick="eliminarExperiencia(this)"><i class="fas fa-times"></i></button>
+                        <div class="experiencia-header">
+                            <h3>Desarrollador Backend</h3>
+                            <span class="fecha">2024 - Actualidad</span>
+                        </div>
+                        <p class="empresa">Universidad Santiago de Cali</p>
+                        <ul class="logros">
+                            <li>Desarrollo de APIs REST para sistemas institucionales</li>
+                            <li>Optimización de rendimiento de bases de datos</li>
+                            <li>Implementación de pipelines CI/CD</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experiencia-item">
+                        <button class="btn-remove" onclick="eliminarExperiencia(this)"><i class="fas fa-times"></i></button>
+                        <div class="experiencia-header">
+                            <h3>Especialista en Ciberseguridad</h3>
+                            <span class="fecha">2024 - Actualidad</span>
+                        </div>
+                        <p class="empresa">Freelance</p>
+                        <ul class="logros">
+                            <li>Pruebas de penetración en aplicaciones web</li>
+                            <li>Auditorías de seguridad informática</li>
+                            <li>Capacitación en concienciación de seguridad</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn-add" onclick="agregarExperiencia()">Agregar Experiencia</button>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
